@@ -37,7 +37,19 @@ function App() {
 
   return (
     <>    
-     
+      <Router>
+        <Navbar title = "Learn-React" mode={mode} toggleMode={toggleMode}/>
+        <Alert alert={alert}/>
+        {/* <Navbar/> */}
+        <div className="container mt-3">
+          <TextForm showAlert ={showAlert} heading = "Enter your text!" mode={mode}/>
+          {/* <About/> */}
+        </div>
+        <Routes>
+          <Route path="/about" element={<About/>} />            
+          <Route path="/learnMore" element={<LearnMore  mode={mode}/>} />            
+        </Routes>
+    </Router>
     </>
    
   );
